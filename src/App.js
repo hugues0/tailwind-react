@@ -1,8 +1,12 @@
 
 import './App.css';
+import useFetch from 'react-fetch-hook'
 import ContactCard from './ContactCard';
 
 function App() {
+  const url = 'https://randomuser.me/api'
+  const {isLoading,data,error} = useFetch( path :url+'?results=200')
+  data && console.log(data)
   return (
     <div className="bg-gray-100 p-4">
       <section>
